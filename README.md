@@ -7,4 +7,4 @@ Working version of simple calculator
 
 2)npx expo start
 
-3)Personally I used EXPO GO for development and debug
+3)I personally used EXPO GO for development and debug
