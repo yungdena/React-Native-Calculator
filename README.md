@@ -4,5 +4,7 @@ Working version of simple calculator
 
 
 1)npm install
+
 2)npx expo start
+
 3)Personally I used EXPO GO for development and debug
