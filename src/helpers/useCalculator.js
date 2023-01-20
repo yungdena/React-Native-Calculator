@@ -21,28 +21,31 @@ export const useCalculator = () => {
   };
 
   const handleEqualPress = () => {
-    let result;
-    if (operator === "+") {
-      result = (
-        parseFloat(previousValue) + parseFloat(displayValue)
-      ).toString();
-    } else if (operator === "-") {
-      result = (
-        parseFloat(previousValue) - parseFloat(displayValue)
-      ).toString();
-    } else if (operator === "*") {
-      result = (
-        parseFloat(previousValue) * parseFloat(displayValue)
-      ).toString();
-    } else if (operator === "/") {
-      result = (
-        parseFloat(previousValue) / parseFloat(displayValue)
-      ).toString();
-    } else if (operator === "%") {
-      result = (parseFloat(previousValue) / 100).toString();
-    } else if (operator === "+-") {
-      result = (-parseFloat(previousValue)).toString();
+    let result = 0;
+
+    switch (operator) {
+      case "+":
+        result = (parseFloat(previousValue) + parseFloat(displayValue)).toString();
+        break;
+      case "-":
+        result = (parseFloat(previousValue) - parseFloat(displayValue)).toString();
+        break;
+      case "*":
+        result = (parseFloat(previousValue) * parseFloat(displayValue)).toString();
+        break;
+      case "/":
+        result = (parseFloat(previousValue) / parseFloat(displayValue)).toString();
+        break;
+      case "%":
+        result = (parseFloat(previousValue) / 100).toString();
+        break;
+      case "+-":
+        result = (-parseFloat(previousValue)).toString();
+        break;
+      default:
+        result = "0";
     }
+
     setDisplayValue(result);
     setOperator(null);
     setPreviousValue(null);
